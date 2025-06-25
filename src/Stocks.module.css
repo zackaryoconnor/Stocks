@@ -1,0 +1,35 @@
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background-color: #357373;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 200px;
+  gap: 24px;
+  padding: 8px;
+  border-radius: 12px;
+}
+.cardDown {
+  background-color: #f1352c;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 200px;
+  gap: 24px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.price {
+  text-align: right;
+}
