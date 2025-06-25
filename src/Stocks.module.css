@@ -6,16 +6,21 @@ p {
 
 .container {
   margin-top: 24px;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: thin;
 }
 
 .card {
   background-color: #357373;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  max-width: 200px;
+  min-width: 200px;
+  height: 86px;
   gap: 24px;
   padding: 8px;
   border-radius: 12px;
@@ -24,7 +29,7 @@ p {
   background-color: #f1352c;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  max-width: 200px;
+min-width: 200px;
   gap: 24px;
   padding: 8px;
   border-radius: 12px;
