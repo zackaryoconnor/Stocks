@@ -1,12 +1,17 @@
 :root {
   margin: 0;
   padding: 0;
-  background-color: #050a0a;
 }
 
 html {
   color-scheme: dark light;
+  font-family: sans-serif;
 }
+
+h1, h2, h3 {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 
 
 /* colors */
