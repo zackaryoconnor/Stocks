@@ -9,11 +9,11 @@ A modern, responsive web application for tracking stock prices and staying updat
 
 ## About
 
-This stock dashboard provides real-time stock information and financial news in a clean, user-friendly interface. Users can search for stocks, view current prices, and stay informed with the latest market news. The application leverages the Finnhub API to deliver accurate and up-to-date financial data.
+This stock dashboard provides <!--real-time--> stock information and financial news in a clean, user-friendly interface. Users can search for stocks, view current prices, and stay informed with the latest market news. The application leverages the Finnhub API to deliver accurate and up-to-date financial data.
 
 ## Features
 
-- **Real-time Stock Data** - View current stock prices and market information
+- **<!--Real-time--> Stock Data** - View current stock prices and market information
 - **Financial News** - Stay updated with the latest market news and trends
 - **Responsive Design** - Optimized for desktop, tablet, and mobile devices
 - **Type Safety** - Built with TypeScript for better code quality and developer experience
@@ -71,7 +71,8 @@ npm run dev
 ## API Integration
 
 This application uses the [Finnhub API](https://finnhub.io/) to fetch:
-- Real-time stock prices
+<!--real-time-->
+- Stock prices
 - Company profiles
 - Financial news
 - Market data
@@ -85,7 +86,7 @@ This application uses the [Finnhub API](https://finnhub.io/) to fetch:
 ## Features in Detail
 
 ### Stock Search & Display
-- View real-time price data
+- View <!--real-time--> price data
 - Show price change and percentage change
 <!-- - Search stocks by ticker symbol -->
 <!-- - Display key metrics (open, high, low, close) -->
@@ -96,8 +97,8 @@ This application uses the [Finnhub API](https://finnhub.io/) to fetch:
 - Clean, readable news format
 - External links to full articles
 
-## Screenshots
-Coming soon...
+<!--## Screenshots
+Coming soon...-->
 
 ## Future Enhancements
 
