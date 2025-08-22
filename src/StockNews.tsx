@@ -1,61 +1,79 @@
 import styles from './StockNews.module.css'
 import { useEffect, useState } from 'react'
 
+interface NewsItem {
+  category: string
+  datetime: number
+  headline: string
+  id: number
+  image: string
+  source: string
+  summary: string
+  url: string
+}
+
 function StockNews() {
-  const [news, setNews] = useState<
-    {
-      category: string
-      datetime: Date
-      headline: string
-      id: number
-      image: string
-      source: string
-      summary: string
-      url: string
-    }[]
-  >([])
+  const [news, setNews] = useState<NewsItem[]>([])
+  const [error, setError] = useState<string>('')
 
   useEffect(() => {
     const fetchNews = async () => {
-      const url = `https://finnhub.io/api/v1/news?category=general&token=${
-        import.meta.env.VITE_FINNHUB_API_KEY
-      }`
-
-      const response = await fetch(url)
-      const data = await response.json()
-      setNews(data)
+      try {
+        const url = `https://finnhub.io/api/v1/news?category=general&token=${
+          import.meta.env.VITE_FINNHUB_API_KEY
+        }`
+        const response = await fetch(url)
+        if (!response.ok) {
+          throw new Error('Failed to fetch news')
+        }
+        const data = await response.json()
+        setNews(data)
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Failed to fetch news')
+        console.error('Error fetching news:', err)
+      }
     }
-    console.log(news)
     fetchNews()
   }, [])
+
+  if (error) {
+    return <div className={styles.error}>{error}</div>
+  }
 
   return (
     <>
       <h1 className={styles.topNews}>Top News</h1>
       <div className={styles.container}>
-          {news.length > 0 ? (
-            news.slice(0, 10).map((item) => (
-              <div
-                key={item.id}
-                className={styles.cardContainer}>
+        {news.length > 0 ? (
+          news.slice(0, 15).map((item) => (
+            <a
+              key={item.id}
+              href={item.url}
+              target="_blank"
+              className={styles.newsLink}>
+              <div className={styles.cardContainer}>
                 {item.image && (
                   <img
                     src={item.image}
                     alt=""
-                    style={{ width: '100%' }}
+                    className={styles.newsImage}
                   />
                 )}
-                <div className="sourcePosted">
-                  {item.source}
-                  {new Date(item.datetime * 1000).toLocaleDateString()}
+                <div className={styles.newsContent}>
+                  <h2>{item.headline}</h2>
+                  <div className={styles.source}>
+                    <span>{item.source}</span>
+                    <span>
+                      {new Date(item.datetime * 1000).toLocaleDateString()}
+                    </span>
+                  </div>
                 </div>
-                <h3>{item.headline}</h3>
-                <p>{item.summary}</p>
               </div>
-            ))
-          ) : (
-            <div>Loading news...</div>
-          )}
+            </a>
+          ))
+        ) : (
+          <div className={styles.loading}>Loading news...</div>
+        )}
       </div>
     </>
   )

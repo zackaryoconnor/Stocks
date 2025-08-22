@@ -1,21 +1,22 @@
 :root {
   margin: 0;
   padding: 0;
+  height: 100%;
+  background: linear-gradient(45deg, #0f172a, #1e293b, #0f172a);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+body {
+  padding-bottom: 54px;
 }
 
 html {
   color-scheme: dark light;
   font-family: sans-serif;
+  height: 100%;
 }
 
 h1, h2, h3 {
   font-family: 'Times New Roman', Times, serif;
 }
-
-
-
-/* colors */
-/* background: #050a0a */
-/* primary: #aac1c2 */
-/* up: #357373 */
-/* down: #f1352c */

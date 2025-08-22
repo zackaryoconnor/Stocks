@@ -1,8 +1,10 @@
 .container {
-    margin: 64px 36px;
+    margin: 124px;
 }
 
-h1 {
+.currentDate {
   font-size: 2.5rem;
   margin-bottom: 12px;
+  font-weight: 400;
+  color: #aaa;
 }

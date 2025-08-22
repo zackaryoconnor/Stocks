@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --spacing-small: 1rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 2.25rem;
+
+  --animation-duration: 100s;
+}
+
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.scroller {
+  display: flex;
+  margin-inline: auto;
+  padding-inline: var(--spacing-small);
+}
+
+.scrollerInner {
+  padding-block: var(--spacing-medium);
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--spacing-small);
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 200px;
+  min-width: 200px;
+  padding: 8px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.name p {
+font-size: 14px;
+color: rgba(255, 255, 255, 0.8);
+width: 8em;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+.price p {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.scroller[data-animated='true'] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 5%,
+    white 95%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+}
+
+.scroller[data-animated='true'] .scrollerInner {
+  width: max-content;
+  animation: scroll var(--animation-duration) linear infinite;
+}
+
+.scroller[data-animated='true']:hover .scrollerInner {
+  animation-play-state: paused;
+}
+
+.change,
+.price {
+  text-align: right;
+}
+
+.positive {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.2),
+    rgba(16, 185, 129, 0.2)
+  );
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.negative {
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.2),
+    rgba(220, 38, 38, 0.2)
+  );
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}

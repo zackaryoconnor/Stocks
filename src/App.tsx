@@ -1,19 +1,15 @@
 import styles from './App.module.css'
 
-import Stocks from './Stocks'
-import Weather from './Utilities/Weather'
+import TickerScroller from './TickerScroller'
 import StockNews from './StockNews'
 import { getCurrentDate } from './Utilities/Utilities'
 
 function App() {
-
-
   return (
     <>
-      <Stocks />
+      <TickerScroller />
       <div className={styles.container}>
-        <h1>{getCurrentDate()}</h1>
-        <Weather/>
+        <h1 className={styles.currentDate}>{getCurrentDate()}</h1>
         <StockNews/>
       </div>
     </>
