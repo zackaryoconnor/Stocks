@@ -1,10 +1,11 @@
-# Stocks Dashboard
+# Stocks and News Dashboard
 
 A modern, responsive web application for tracking stock prices and staying updated with the latest financial news. Built with React and TypeScript, powered by the Finnhub API.
 
 <!--## Live Demo
 
 **[View Live Site](#)** *(Add your deployment link here)*-->
+<img width="2672" height="1527" alt="Screen Shot 2025-08-22 at 12 21 54 PM" src="https://github.com/user-attachments/assets/41600246-c73e-4133-8d8e-52a1246a4ecf" />
 
 ## About
 
